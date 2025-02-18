@@ -15,7 +15,6 @@ create_objs:
 	gcc -c -fPIC $(SRC_DIR)/helloThanh.c -o $(OBJ_DIR)/helloThanh.o -I $(INC_DIR)
 	gcc -c -fPIC $(SRC_DIR)/helloWorld.c -o $(OBJ_DIR)/helloWorld.o -I $(INC_DIR)
 	gcc -c $(SRC_DIR)/main.c -o $(OBJ_DIR)/main.o -I $(INC_DIR)
-
 create_shared_libs:
 	gcc -shared $(OBJ_DIR)/helloThanh.o $(OBJ_DIR)/helloWorld.o -o $(LIB_SHARED_DIR)/libhello.so
 
@@ -31,5 +30,4 @@ clean:
 	rm -rf $(LIB_SHARED_DIR)/*.so
 	rm -rf $(LIB_STATIC_DIR)/*.a
 	rm -rf $(BIN_DIR)/use-shared-library
-	rm -rf $(BIN_DIR)/statically-linked
-	
+
